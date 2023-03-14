@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>-::.  SANXO INFORMATION TECHNOLOGIES S.A.S. .::.</title>
+</head>
+<body>
+  <h1>::: MAESTRO PERSONAS :::</h1>
+  <p>Este formulario permite observar la lista de personas almacenada en la base de datos; así mismo puede usar las opciones para indicar si queire modificar, insertar o borrar un registro en la base de dsatos.</p>
+  <form method="post" action="{{ url_for('guardar_p') }}"><!--// {{ url_for('persona') }}-->
+    <label for="id">Documento:</label>
+    <input type="text" id="id" name="id"><br>
+    <label for="fechanace">Fecha de nacimiento:</label>
+    <input type="date" id="fechanace" name="fechanace"><br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido"><br>
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono"><br>
+    <label for="correoe">Correo electrónico:</label>
+    <input type="email" id="correoe" name="correoe"><br>
+    <label for="tipousuario">Tipo de usuario:</label>
+    <select id="tipousuario" name="tipousuario">
+      <option value="1">Administrador</option>
+      <option value="2">Usuario</option>
+	</select>
+  <hr><br>
+  <label for="accion">Accion:</label><br>  
+  <input type="radio" id="guardar" name="accion" value="Guardar">
+  <label for="guardar">Guardar</label><br>
+  <input type="radio" id="editar" name="accion" value="Editar">
+  <label for="editar">Editar</label><br>
+  <input type="radio" id="borrar" name="accion" value="Borrar">
+  <label for="borrar">Borrar</label><br>
+  <input type="radio" id="leer" name="accion" value="Leer">
+  <label for="leer">Leer</label><br>
+  <input type="radio" id="exportar" name="accion" value="Exportar">
+  <label for="exportar">Exportar</label><br>
+  <hr>
+  <button type="submit">>> Ejecutar</button>
+  </form>
+<hr>  
+<a href="/">index</a>
+<a href="contacto">contacto</a>
+<a href="nosotros">nosotros</a>
+</body>
+</html>

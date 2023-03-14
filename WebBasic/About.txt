@@ -1,0 +1,3 @@
+This is a simple project: a webpage built using HTML 5 with a basic data form; it collects data for 'Persona' table on the MySql Server.
+The webpage let users interact with data base 'SanxoDB' for insert, update, read and delete data on 'Persona' table, and has a basic functionality for export the data to a text file without formating.
+
