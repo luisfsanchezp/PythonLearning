@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 15, 2023 at 04:21 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `Pruebas`
+--
+CREATE DATABASE IF NOT EXISTS `Pruebas` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `Pruebas`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personas`
+--
+
+CREATE TABLE `personas` (
+  `id` int(11) NOT NULL,
+  `fechanace` date DEFAULT NULL,
+  `nombre` varchar(300) DEFAULT NULL,
+  `apellido` varchar(300) DEFAULT NULL,
+  `telefono` bigint(20) DEFAULT NULL,
+  `correoe` varchar(350) DEFAULT NULL,
+  `tipousuario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `personas`
+--
+
+INSERT INTO `personas` (`id`, `fechanace`, `nombre`, `apellido`, `telefono`, `correoe`, `tipousuario`) VALUES
+(5550098, '1987-10-10', 'Fredrik andres', 'solsa', 11123456789, 'fedesolo@argo.com', 2),
+(9876576, '1966-04-08', 'ANGELA maria', 'urrutia', 23000776, 'luisa987@yahoo.es', 2),
+(9998080, '1995-07-28', 'diego alonso', 'Cuevas montoya', 3333990090, 'diemonto@unacasita.org', 2),
+(11345609, '0000-00-00', 'veronica', 'polo', 123435, 'hhhh@hjhjo.com', 2),
+(45609999, '2006-06-13', 'sergio andres', 'lopera lopez', 576301234, 'sergio@lopez.info', 2),
+(55560788, '2000-06-13', 'pepito algarrobo', 'saliendo rapido', 56908765432, 'pepe@aqui.com', 2),
+(90012300, '1984-02-12', 'cARLOS aNGELINO', 'salazar', 2232323, 'elco@quequiere.org', 2),
+(90012302, '2000-12-12', 'FEDERICO ALONSO', 'PALACIO MUNERA', 32210099, 'FEDEPAL@GANA.COM', 2),
+(90012303, '2023-01-31', 'SARAH', 'SALCEDO BUENDIA', 1234560987665, 'definitivo@elmail.com', 2),
+(888999231, '1986-12-12', 'FERNANDO LUIS', 'PALACIO MUNERA', 3000981233, 'FErLu@GANA.COM', 1),
+(900756431, '2023-02-27', 'Caramelio', 'ZApata', 45345645, 'zapata.mam@hotmail.com', 1),
+(1017888001, '2023-03-01', 'Miguel', 'Corrales', 9907344, 'luis.sanchez@pascualbravo.edu.co', 2),
+(1017890065, '2000-12-06', 'Miguel Angel', 'Atehortua Paz', 3134126666, 'miguel.ate@frolian.org', 2),
+(1042822243, '2011-07-06', 'Federico', 'Polanco', 2114455, 'fedepolo@sena.edu', 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `personas`
+--
+ALTER TABLE `personas`
+  ADD PRIMARY KEY (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
