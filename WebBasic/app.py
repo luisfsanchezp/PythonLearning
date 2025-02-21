@@ -111,11 +111,9 @@ def guardar_p():
             db.commit()
             return "Se exportaron los datos a la ruta especificada.[>>Reports]"
         
-##TO DO: conectarme a MongoDB con este string:
-#       
-##mongodb+srv://luisfernandosanchez:<db_password>@webapp.pduav.mongodb.net/?retryWrites=true&w=majority&appName=WebApp
-#construir los metodos para gestion de MongoDB
-# 
+##TO DO: 
+
+#a partir de mgmanager.py generar las funciones para gestion de los datos. 
 # 
 # 
 # 
