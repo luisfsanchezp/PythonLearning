@@ -6,15 +6,15 @@ import sys
 # you should not store your password in plain-text here.
 
 try:
-  client = pymongo.MongoClient(mongodb+srv://luisfernandosanchez:<db_password>@webapp.pduav.mongodb.net/?retryWrites=true&w=majority&appName=WebApp)
+  client = pymongo.MongoClient("mongodb+srv://luisfernandosanchez:<aqui_el_pass>@webapp.pduav.mongodb.net/?retryWrites=true&w=majority&appName=WebApp")
   
 # return a friendly error if a URI error is thrown 
 except pymongo.errors.ConfigurationError:
   print("An Invalid URI host error was received. Is your Atlas host name correct in your connection string?")
   sys.exit(1)
 
-# use a database named "WebApp"
-db = client.myDatabase
+# use a database named "myDatabase"
+db = client.movies
 
 # use a collection named "recipes"
 my_collection = db["recipes"]
