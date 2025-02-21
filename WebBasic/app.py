@@ -42,7 +42,7 @@ def guardar_p():
         host="localhost",
         user="root",
         password="",
-        database="test"
+        database="pruebas"
         )
 
             
@@ -104,7 +104,7 @@ def guardar_p():
             d=" ".join(str(row) for row in datos)
             f=datetime.date.today().isoformat()  
             r=time.strftime("%Y%m%d_%H%M%S")
-            archivo = open("Reports/Personas_"+"_"+r+".txt", "w")
+            archivo = open("PythonLearning\PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".txt", "w")
             archivo.write(d)
             archivo.close()
 
