@@ -104,13 +104,25 @@ def guardar_p():
             d=" ".join(str(row) for row in datos)
             f=datetime.date.today().isoformat()  
             r=time.strftime("%Y%m%d_%H%M%S")
-            archivo = open("PythonLearning\PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".txt", "w")
+            archivo = open("PythonLearning\PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".csv", "w")
             archivo.write(d)
             archivo.close()
 
             db.commit()
             return "Se exportaron los datos a la ruta especificada.[>>Reports]"
-            
+        
+##TO DO: conectarme a MongoDB con este string:
+#       
+##mongodb+srv://luisfernandosanchez:<db_password>@webapp.pduav.mongodb.net/?retryWrites=true&w=majority&appName=WebApp
+#construir los metodos para gestion de MongoDB
+# 
+# 
+# 
+# 
+
+
+
+
         if accion=='Leer':                          
             resultado= obtener_personas()
         elif accion=='Editar':
