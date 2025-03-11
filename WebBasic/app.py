@@ -1,6 +1,7 @@
 
 from flask import Flask, render_template, request
 import mysql.connector, csv, datetime, time
+import datascience
 
 
 
@@ -103,32 +104,66 @@ def guardar_p():
             return res
     
         # Función para exportar a un archivo de texto los datos de la tabla
-        def exportartxt(): 
+        def exportarTxt(): 
             cursor = db.cursor()
-            cursor.execute("SELECT * FROM personas") #WHERE id LIKE ='"+id+"';"
+            cursor.execute("SELECT * FROM personas") 
             datos = cursor.fetchall() 
 
-            #json_string = json.dumps(datos)
             d=" ".join(str(row) for row in datos)
             f=datetime.date.today().isoformat()  
             r=time.strftime("%Y%m%d_%H%M%S")
-            archivo = open("PythonLearning\PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".csv", "w")
+            archivo = open("PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".txt", "w")
+            
             archivo.write(d)
             archivo.close()
 
             db.commit()
-            return "Se exportaron los datos a la ruta especificada.[>>Reports]"
+            return "Se exportaron los datos TXT a la ruta especificada.[>>Reports]"
         
-        # Función para eliminar una persona de la tabla
-        def analizar():
-              analitica()
-        
-##TO DO: 
+        # Función para a
+        def exportarCsv():
+            
+            cursor = db.cursor()
+            cursor.execute("SELECT * FROM personas") 
+            datos = cursor.fetchall() 
 
-#a partir de mgmanager.py generar las funciones para gestion de los datos. 
-# 
-# 
-# 
+            d=" ".join(str(row) for row in datos)
+            f=datetime.date.today().isoformat()  
+            r=time.strftime("%Y%m%d_%H%M%S")
+            archivo = open("PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".csv", "w")
+            
+            archivo.write(d)
+            archivo.close()
+
+            db.commit()
+            return "Se exportaron los datos CSV a la ruta especificada.[>>Reports]"
+             # datascience.ExportarAcsv() 
+
+
+        def exportarPdf():
+            
+            cursor = db.cursor()
+            cursor.execute("SELECT * FROM personas") 
+            datos = cursor.fetchall() 
+
+            d=" ".join(str(row) for row in datos)
+            f=datetime.date.today().isoformat()  
+            r=time.strftime("%Y%m%d_%H%M%S")
+            archivo = open("PythonLearning\WebBasic\Reports\Personas_"+"_"+r+".pdf", "w")
+            
+            archivo.write(d)
+            archivo.close()
+
+            db.commit()
+            return "Se exportaron los datos PDF a la ruta especificada.[>>Reports]"
+             # datascience.ExportarAPDF()
+        
+    ##TO DO: 
+
+    #a partir de mgmanager.py generar las funciones para gestion de los datos. 
+    # 
+    # 
+    # 
 
 
 
@@ -138,10 +173,14 @@ def guardar_p():
               resultado= actualizar_persona(fechanace, nombre, apellido, telefono, correoe, tipousuario, id)
         elif accion=='Borrar':
               resultado= eliminar_persona(id)              
-        elif accion=='Exportar':                          
-              resultado=  exportartxt()                           
+        elif accion=='Exportartxt':                          
+              resultado=  exportarTxt()                     
+        elif accion=='Exportarcsv':                          
+              resultado= exportarCsv                   
+        elif accion=='Exportarpdf':                          
+              resultado=  exportarPdf()                           
         elif accion=='Analizar':                          
-               analizar() 
+              resultado = analitica()
         else:
               resultado= insertar_persona(id, fechanace, nombre, apellido, telefono, correoe, tipousuario)
         # Cierre de la conexión a la base de datos

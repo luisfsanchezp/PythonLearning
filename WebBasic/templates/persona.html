@@ -2,7 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
   <title>-::.  SANXO INFORMATION TECHNOLOGIES S.A.S. .::.</title>
 </head>
 <body>
@@ -36,16 +38,19 @@
   <label for="borrar">Borrar</label><br>
   <input type="radio" id="leer" name="accion" value="Leer">
   <label for="leer">Leer</label><br>
-  <input type="radio" id="exportar" name="accion" value="Exportar">
-  <label for="exportar">Exportar</label><br>
-  <input type="radio" id="analizar" name="accion" value="Analizar">
-  <label for="analizar">Analizar</label><br>
+  <input type="checkbox" id="exportartxt" name="accion" value="Exportartxt">
+  <label for="exportartxt">Exportar a TXT</label><br>
+  <input type="checkbox" id="exportarcsv" name="accion" value="Exportarcsv">
+  <label for="exportarcsv">Exportar a CSV</label><br>
+  <input type="checkbox" id="exportarpdf" name="accion" value="Exportarpdf">
+  <label for="exportarpdf">Exportar a PDF</label><br>
   <hr>
   <button type="submit">>> Ejecutar</button>
   </form>
 <hr>  
 <a href="/">index</a>
-<a href="contacto">contacto</a>
-<a href="nosotros">nosotros</a>
+<a href="contacto">Contacto</a>
+<a href="nosotros">Nosotros</a>
+<a href="analitica">Analitica</a>
 </body>
 </html>

@@ -1,12 +1,30 @@
-<!-- analitica.html -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
     <title>Análitica</title>
 </head>
 <body>
     <h1>Análitica</h1>
-    <img src="grafico1.png" alt="Gráfico 1"><!-- aqui va la presentación de las gráficas generadas.-->
-    <img src="grafico2.png" alt="Gráfico 2">
+    <table><tr><td><img src="{{ url_for('static', filename='images/VentasxAño.png' ) }}" alt="Ventas Anuales de la Organización"></br>
+    Loren ipsum dolor sit amet adepicci cinsectetur...</td>
+    
+    <!-- aqui va la presentación de las gráficas generadas.-->
+    <td><img src="{{ url_for('static', filename='images/RadarMercado.jpg' ) }}" alt="Participación de Mercado por Producto"></br>
+        Loren ipsum dolor sit amet adepicci cinsectetur...
+        <!-- aqui va la presentación de las gráficas generadas.--></br></td></tr>
+         <tr><td><img src="{{ url_for('static', filename='images/linear.jpg' ) }}" alt="Historico Ventas por Producto"></br>
+        Loren ipsum dolor sit amet adepicci cinsectetur...
+        <!-- aqui va la presentación de las gráficas generadas.--></br></td><td>&nbsp;</td></tr></table>
+    
+    
+    <hr>  
+    <a href="/">index</a>
+    <a href="contacto">Contacto</a>
+    <a href="nosotros">Nosotros</a>
+    <a href="persona">Persona</a>
 </body>
 </html>
