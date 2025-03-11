@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request
 import mysql.connector, csv, datetime, time
 import datascience
+import analitica
 
 
 
@@ -26,8 +27,9 @@ def persona():
 
 
 @app.route('/analitica')
-def analitica():
-    return render_template('analitica.html')
+def analitics():
+    analitica.ejecutar_analitica()
+   # return render_template('analitica.html')
 
 
 @app.route('/guardar_p', methods=['GET','POST'])
@@ -180,7 +182,7 @@ def guardar_p():
         elif accion=='Exportarpdf':                          
               resultado=  exportarPdf()                           
         elif accion=='Analizar':                          
-              resultado = analitica()
+              resultado = analitics()
         else:
               resultado= insertar_persona(id, fechanace, nombre, apellido, telefono, correoe, tipousuario)
         # Cierre de la conexión a la base de datos
