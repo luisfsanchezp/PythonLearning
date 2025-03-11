@@ -1,3 +1,10 @@
+'''Este archivo incluye:
+
+    Conexión a la base de datos: Para obtener los datos de la tabla personas y las respuestas a la encuesta.
+    Análisis básico de los datos: Descripción y estadísticas de los datos de los empleados.
+    Gráfico Radial: Mostrar las respuestas de la rueda de la vida para cada usuario.
+    Otras métricas: Por ejemplo, promedio de satisfacción de los empleados, análisis de tendencias, etc.'''
+
 import mysql.connector
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -6,7 +13,7 @@ import seaborn as sns
 from datetime import datetime
 
 # Configurar estilo de gráficos
-sns.set(style="whitegrid")
+sns.set_theme(style="whitegrid")
 
 # Conexión a la base de datos MySQL
 def obtener_conexion():
@@ -29,11 +36,8 @@ def obtener_personas():
 def obtener_encuestas():
     conn = obtener_conexion()
     query = "SELECT * FROM encuesta"
-    
-    # Asegurarnos de que las columnas con fechas sean convertidas automáticamente a datetime
-    df_encuestas = pd.read_sql(query, conn, parse_dates=['fecha'])  # Aquí le indicamos a pandas que convierta 'fecha' en datetime
+    df_encuestas = pd.read_sql(query, conn)
     conn.close()
-
     return df_encuestas
 
 # Función para realizar análisis descriptivo básico de los datos de personas
@@ -106,3 +110,5 @@ def ejecutar_analitica():
 
     # Graficar la satisfacción de un empleado (por ejemplo, el que tiene id_persona == 1)
     graficar_satisfaccion(df_encuestas, id_persona=1)
+
+  
