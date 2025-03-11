@@ -24,6 +24,11 @@ def persona():
         return render_template('persona.html')
 
 
+@app.route('/analitica')
+def analitica():
+    return render_template('analitica.html')
+
+
 @app.route('/guardar_p', methods=['GET','POST'])
 def guardar_p(): 
         resultado=''           
@@ -35,15 +40,18 @@ def guardar_p():
         telefono = request.form.get('telefono')
         correoe = request.form.get('correoe')
         tipousuario = request.form.get('tipousuario')
+        try:
+                # Conexión a la base de datos
+                db = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="pruebas"
+                )
+        except:
+             return "No existe conección a la base de datos, verifica que el servidor esté activo y tus datos sean correctos."
 
 
-        # Conexión a la base de datos
-        db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="pruebas"
-        )
 
             
         # Función para insertar una persona en la tabla
@@ -111,13 +119,16 @@ def guardar_p():
             db.commit()
             return "Se exportaron los datos a la ruta especificada.[>>Reports]"
         
+        # Función para eliminar una persona de la tabla
+        def analizar():
+              analitica()
+        
 ##TO DO: 
 
 #a partir de mgmanager.py generar las funciones para gestion de los datos. 
 # 
 # 
 # 
-
 
 
 
@@ -128,12 +139,15 @@ def guardar_p():
         elif accion=='Borrar':
               resultado= eliminar_persona(id)              
         elif accion=='Exportar':                          
-              resultado=  exportartxt() 
+              resultado=  exportartxt()                           
+        elif accion=='Analizar':                          
+               analizar() 
         else:
               resultado= insertar_persona(id, fechanace, nombre, apellido, telefono, correoe, tipousuario)
         # Cierre de la conexión a la base de datos
         db.close()
         return resultado
+
 
 
 if __name__ == '__main__':
