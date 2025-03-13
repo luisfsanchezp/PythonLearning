@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta de Satisfacción</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css' ) }}">
+    <title>.::. Coquito Amarillo .::. Web Corporativa</title>
 </head>
 <body>
-    <h1>Bienvenido al Sistema de Encuestas</h1>
+    <h1>Bienvenido al sistema de información de Coquito Amarillo.</h1>
     <a href="{{ url_for('encuesta') }}">Iniciar Encuesta</a>
     <a href="{{ url_for('reporte') }}">Ver Reporte</a>
 </body>

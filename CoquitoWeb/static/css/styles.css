@@ -1,0 +1,129 @@
+/* Estilo Global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0; /* Fondo claro para todo el body */
+    color: #333; /* Color de texto por defecto */
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: #388e3c; /* Fondo verde oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Estilo para enlaces */
+a {
+    color: #388e3c; /* Enlaces en verde */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #81c784; /* Color verde claro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* Fondo verde con letra negra para los divs */
+div {
+    background-color: #81c784; /* Fondo verde claro */
+    color: #000000; /* Letra negra */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto de profundidad */
+    margin: 15px 0;
+}
+
+/* Resaltar tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #388e3c; /* Bordes verdes */
+}
+
+th {
+    background-color: #388e3c; /* Fondo verde oscuro en los encabezados de la tabla */
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    background-color: #e8f5e9; /* Fondo verde muy claro en celdas */
+    color: #000000;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Resaltar celdas cuando se pasa el mouse */
+tr:hover td {
+    background-color: #c8e6c9; /* Fondo verde más claro al pasar el mouse */
+}
+
+/* Estilo para botones */
+button {
+    background-color: #388e3c; /* Fondo verde oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #81c784; /* Fondo verde claro cuando pasa el mouse */
+}
+
+/* Estilo para formularios */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #388e3c; /* Bordes verdes */
+    border-radius: 4px;
+    background-color: #e8f5e9; /* Fondo verde claro */
+    color: #333;
+}
+
+input[type="submit"] {
+    background-color: #388e3c; /* Fondo verde oscuro */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #81c784; /* Fondo verde claro al pasar el mouse */
+}
+
+/* Estilo para las listas */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Resaltar el footer */
+footer {
+    background-color: #388e3c; /* Fondo verde oscuro */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

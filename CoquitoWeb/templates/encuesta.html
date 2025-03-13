@@ -2,27 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Encuesta de Satisfacción</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css' ) }}">
+    <title>.::. Coquito Amarillo .::. Encuesta de Talento Humano</title>
 </head>
 <body>
     <h1>Encuesta de Satisfacción</h1>
     <form method="POST">
-        <label for="documento">Documento</label>
-        <input type="text" id="documento" name="documento" required><br>
-        <label for="nombres">Nombres</label>
-        <input type="text" id="nombres" name="nombres" required><br>
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos" required><br>
-        <label for="correo">Correo Electrónico</label>
-        <input type="email" id="correo" name="correo" required><br>
-
+        <table>
+            <tr>
+                <td><label for="documento">Documento</label></td>
+                <td><input type="text" id="documento" name="documento" required><br></td>
+            </tr>
+            <tr><td><label for="nombres">Nombres</label></td>
+                <td><input type="text" id="nombres" name="nombres" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="apellidos">Apellidos</label></td>
+                <td><input type="text" id="apellidos" name="apellidos" required><br></td>
+            </tr>
+            <tr>
+                <td><label for="correo">Correo Electrónico</label></td>
+                <td><input type="email" id="correo" name="correo" required><br></td>
+            </tr>
+        
         {% for dimension in dimensiones %}
             <h3>{{ dimension[1] }}</h3>
-            <input type="hidden" name="dimension_id" value="{{ dimension[0] }}">
-            <label for="puntuacion_{{ dimension[0] }}">Puntuación (1-5)</label>
-            <input type="number" id="puntuacion_{{ dimension[0] }}" name="puntuacion_{{ dimension[0] }}" min="1" max="5" required><br>
+            <tr>
+                <td><input type="hidden" name="dimension_id" value="{{ dimension[0] }}">
+                    <label for="puntuacion_{{ dimension[0] }}">Puntuación (1-10)</label></td>
+                <td><input type="number" id="puntuacion_{{ dimension[0] }}" name="puntuacion_{{ dimension[0] }}" min="1" max="10" required><br></td>
+            </tr>
         {% endfor %}
-        <button type="submit">Enviar Encuesta</button>
+        <tr>
+            <td colspan="2"><button type="submit">Enviar Encuesta</button>
+            </td>
+        </tr>
+        </table>
     </form>
 </body>
 </html>
