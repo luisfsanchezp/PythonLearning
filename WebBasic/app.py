@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request
 import mysql.connector, csv, datetime, time
 import datascience
-import analitica
+import analitica, basura
 
 
 
@@ -28,8 +28,9 @@ def persona():
 
 @app.route('/analitica')
 def analitics():
-    analitica.ejecutar_analitica()
-   # return render_template('analitica.html')
+    basura.procesar()
+   # analitica.ejecutar_analitica()
+    return render_template('analitica.html')
 
 
 @app.route('/guardar_p', methods=['GET','POST'])
@@ -92,7 +93,7 @@ def guardar_p():
             cursor = db.cursor()
             cursor.execute("SELECT * FROM personas") #WHERE id LIKE ='"+id+"';"
             personas = cursor.fetchall()  
-            res = "<table>"
+            res = "<table style='border=1;'>"
             for x in personas:
                 res += "<tr><td>"+ str(x[0])+ "</td>"
                 res += "<td>"+ str(x[1])+ "</td>"
