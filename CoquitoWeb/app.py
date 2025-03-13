@@ -84,7 +84,14 @@ def reporte():
     img_stream.seek(0)
     img_base64 = base64.b64encode(img_stream.getvalue()).decode('utf-8')
 
-    return render_template('reporte.html', resultados_por_dimension=resultados_por_dimension, graph_html=graph_html, img_base64=img_base64)
+    
+    # Crear un gráfico interactivo con Plotly
+    df2 = pd.DataFrame(list(resultados_por_dimension.items()), columns=['Dimensión', 'Promedio'])
+    fig2 = px.bar_polar(df2, r='Dimensión', hover_name="Promedio")
+    graph_html2 = fig2.to_html(full_html=False)
+
+
+    return render_template('reporte.html', resultados_por_dimension=resultados_por_dimension, graph_html=graph_html, img_base64=img_base64,graph_html2=graph_html2 )
 
 
 

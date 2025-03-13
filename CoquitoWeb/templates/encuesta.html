@@ -28,11 +28,13 @@
             </tr>
         
         {% for dimension in dimensiones %}
-            <h3>{{ dimension[1] }}</h3>
             <tr>
-                <td><input type="hidden" name="dimension_id" value="{{ dimension[0] }}">
+                <td>
+                    <h3>{{ dimension[1] }}</h3></br>
+                    <input type="hidden" name="dimension_id" value="{{ dimension[0] }}">
                     <label for="puntuacion_{{ dimension[0] }}">Puntuación (1-10)</label></td>
-                <td><input type="number" id="puntuacion_{{ dimension[0] }}" name="puntuacion_{{ dimension[0] }}" min="1" max="10" required><br></td>
+                <td>
+                    <input type="number" id="puntuacion_{{ dimension[0] }}" name="puntuacion_{{ dimension[0] }}" min="1" max="10" required><br></td>
             </tr>
         {% endfor %}
         <tr>

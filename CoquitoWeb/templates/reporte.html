@@ -32,5 +32,13 @@
             <li>{{ dimension }}: {{ puntuacion }}</li>
         {% endfor %}
     </ul>
+    
+    <h2>Satisfacción por Dimensión</h2>
+
+    <!-- Mostrar gráfico interactivo de Plotly -->
+    <div>
+        {{ graph_html2|safe }}
+    </div>
+
 </body>
 </html>
