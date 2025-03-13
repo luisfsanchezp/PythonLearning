@@ -1,0 +1,33 @@
+<!-- templates/reporte.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Satisfacción</title>
+</head>
+<body>
+    <h1>Reporte de Satisfacción</h1>
+
+    <h2>Promedio de Satisfacción por Dimensión</h2>
+
+    <!-- Mostrar gráfico interactivo de Plotly -->
+    <div>
+        {{ graph_html|safe }}
+    </div>
+
+    <h2>Gráfico Matplotlib</h2>
+
+    <!-- Mostrar gráfico estático de Matplotlib -->
+    <div>
+        <img src="data:image/png;base64,{{ img_base64 }}" alt="Gráfico Matplotlib">
+    </div>
+
+    <h3>Resultados de Satisfacción por Dimensión</h3>
+    <ul>
+        {% for dimension, puntuacion in resultados_por_dimension.items() %}
+            <li>{{ dimension }}: {{ puntuacion }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

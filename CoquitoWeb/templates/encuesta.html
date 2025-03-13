@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Encuesta de Satisfacción</title>
+</head>
+<body>
+    <h1>Encuesta de Satisfacción</h1>
+    <form method="POST">
+        <label for="documento">Documento</label>
+        <input type="text" id="documento" name="documento" required><br>
+        <label for="nombres">Nombres</label>
+        <input type="text" id="nombres" name="nombres" required><br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required><br>
+
+        {% for dimension in dimensiones %}
+            <h3>{{ dimension[1] }}</h3>
+            <input type="hidden" name="dimension_id" value="{{ dimension[0] }}">
+            <label for="puntuacion_{{ dimension[0] }}">Puntuación (1-5)</label>
+            <input type="number" id="puntuacion_{{ dimension[0] }}" name="puntuacion_{{ dimension[0] }}" min="1" max="5" required><br>
+        {% endfor %}
+        <button type="submit">Enviar Encuesta</button>
+    </form>
+</body>
+</html>
