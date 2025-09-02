@@ -1,0 +1,41 @@
+{
+  "sanxo_store": {
+    "id": 101,
+    "nombre": "Coquito Amarillo Internacional SAS",
+    "direccion": {
+      "calle": "Av. Los Coquitos",
+      "numero": 742,
+      "ciudad": "Medellín",
+      "codigo_postal": "05005"
+    },
+    "contacto": {
+      "telefono": "+57-312-2382849",
+      "email": "gerencia@sanxotec.com"
+    },
+    "horario": {
+      "lunes_a_viernes": "08:00 - 20:00",
+      "sabado": "09:00 - 18:00",
+      "domingo": "Cerrado"
+    },
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Elastano x Tn",
+        "precio": 2.5,
+        "disponible": true
+      },
+      {
+        "id": 2,
+        "nombre": "Poliuretano Granel",
+        "precio": 3.0,
+        "disponible": true
+      },
+      {
+        "id": 3,
+        "nombre": "Trementina x Gl",
+        "precio": 2.0,
+        "disponible": false
+      }
+    ]
+  }
+}
