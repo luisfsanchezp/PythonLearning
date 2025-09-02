@@ -1,8 +1,9 @@
 
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 import mysql.connector, csv, datetime, time
 import datascience
 import analitica, basura
+import json
 
 
 
@@ -12,19 +13,24 @@ app = Flask (__name__)
 def principal():
         return render_template('index.html')
 
-@app.route('/nosotros')
-def nostoros():
-        return render_template('nosotros.html')
-
 @app.route('/contacto')
 def contacto():
         return render_template('contacto.html')
 
+@app.route('/nosotros')
+def nostoros():
+        return render_template('nosotros.html')
 
 @app.route('/persona')
 def persona():
         return render_template('persona.html')
 
+##Incluyo la ruta para simular la llamada a una API que retorne la información de la tienda.
+@app.route('/tienda', methods=['GET'])
+def obtener_tienda():
+    with open('/static/json/prueba_api.json', 'r', encoding='utf-8') as f:
+        datos = json.load(f)
+    return jsonify(datos)
 
 @app.route('/analitica')
 def analitics():
@@ -168,8 +174,6 @@ def guardar_p():
     # 
     # 
 
-
-
         if accion=='Leer':                          
             resultado= obtener_personas()
         elif accion=='Editar':
@@ -184,6 +188,8 @@ def guardar_p():
               resultado=  exportarPdf()                           
         elif accion=='Analizar':                          
               resultado = analitics()
+        elif accion=='Tienda':                  
+              resultado = obtener_tienda()
         else:
               resultado= insertar_persona(id, fechanace, nombre, apellido, telefono, correoe, tipousuario)
         # Cierre de la conexión a la base de datos
