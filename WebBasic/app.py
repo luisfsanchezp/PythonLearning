@@ -1,11 +1,8 @@
-
 from flask import Flask, jsonify, render_template, request
 import mysql.connector, csv, datetime, time
 import datascience
 import analitica, basura
 import json
-
-
 
 app = Flask (__name__)
 
@@ -38,7 +35,6 @@ def analitics():
    # analitica.ejecutar_analitica()
     return render_template('analitica.html')
 
-
 @app.route('/guardar_p', methods=['GET','POST'])
 def guardar_p(): 
         resultado=''           
@@ -60,9 +56,6 @@ def guardar_p():
                 )
         except:
              return "No existe conección a la base de datos, verifica que el servidor esté activo y tus datos sean correctos."
-
-
-
             
         # Función para insertar una persona en la tabla
         def insertar_persona(id, fechanace, nombre, apellido, telefono, correoe, tipousuario):
@@ -148,9 +141,7 @@ def guardar_p():
             return "Se exportaron los datos CSV a la ruta especificada.[>>Reports]"
              # datascience.ExportarAcsv() 
 
-
-        def exportarPdf():
-            
+        def exportarPdf():            
             cursor = db.cursor()
             cursor.execute("SELECT * FROM personas") 
             datos = cursor.fetchall() 
@@ -195,7 +186,6 @@ def guardar_p():
         # Cierre de la conexión a la base de datos
         db.close()
         return resultado
-
 
 
 if __name__ == '__main__':
